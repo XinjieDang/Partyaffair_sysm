@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Partyaffair_sysm:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/Partyaffair_sysm_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="Partyaffair_sysm/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Partyaffair_sysm" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

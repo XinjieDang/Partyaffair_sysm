@@ -1,0 +1,256 @@
+
+html,body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+body{
+    overflow-x:hidden;
+    /*overflow-y:hidden;*/
+}
+ui,li{
+   list-style: none;
+}
+a{
+    text-decoration: none;
+}
+/* 登录框 */
+.login{
+    width: 400px;
+    height: 400px;
+    background: #ebdbb1;
+    margin: 0 auto;
+    position: relative;
+    top:50%;
+    margin-top: -200px;
+}
+.form-data{
+    padding-top: 50px;
+    padding-left: 30px;
+}
+
+.all-data-login{
+    margin-top: 20px;
+    /* background-color: hotpink; */
+    margin-left: 50px;
+}
+.input-pwd{
+    margin-left: 15px;
+    /* width: 160px; */
+}
+
+.login-title{
+   
+    padding-top: -70px;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 200px;
+    height: 50px;
+    /* color:cornsilk; */
+
+}
+/* 首页开始 */
+
+.content{
+    position: relative;
+    width: 500px;
+    height: 500px;
+    background: antiquewhite;
+    top: 50%;
+}
+/* 导航栏 */
+.nav{
+    height: 75px;
+    background: rgb(236,65,65);
+    border: 2px black;
+}
+.nav-title{
+    float: left;
+    margin-left: 50px;
+    color: aliceblue;
+}
+.nav-name{
+    height: 45px;
+    line-height: 45px;
+}
+
+.nav-manu{
+    float: right;
+    margin-right: 40px;
+    color: #000;
+}
+.nav-righ{
+    margin-top: 15px;
+}
+.nav-righ a{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(238, 216, 216);
+}
+.loinout a {
+    padding-bottom: 50px;
+    color: aliceblue;
+}
+/* 侧边菜单 */
+.side-left{
+    float: left;
+    width: 200px;
+    height: 1000px;
+    /*margin-top: 100px;*/
+    background:#f9f9f9;
+}
+.side-maun {
+    margin-top: 5px;
+    height: 400px;
+    width: 100px;
+    color: rgb(78, 74, 74);
+    /* background: crimson; */
+}
+.side-maun a{
+    margin-left: -50px;
+    padding-left: 40px;
+    display: block;
+    width: 170px;
+    height: 40px;
+   font-size: 14px;
+   color:black;
+   text-decoration: none;
+   text-indent: 2em;
+   line-height: 40px;
+
+}
+.side-hide{
+    display: none;
+}
+.side-maun a:hover{
+    background: rgb(133, 121, 121);
+    display: block;
+}
+.side-hide a{
+    display: block;
+    padding-left: 20px;
+    width: 149px;
+    height: 40px;
+   font-size: 14px;
+   color:black;
+   text-decoration: none;
+   text-indent: 2em;
+   line-height: 40px;
+
+}
+
+.side-hide a:hover{
+    background: rgb(216, 204, 204);
+    display: block;
+}
+
+.side-menus-active{
+    background-color: aquamarine;
+
+}
+.main{
+    width: 800px;
+    position: relative;
+}
+/* 右边主体 */
+.side-right{
+    position: absolute;
+    margin-left:200px;
+    /*left: 100px;*/
+    /* width: 1300px; */
+    height: 800px;
+    float: right;
+    /* background: brown; */
+}
+.model-title{
+  /* padding-top: 100px; */
+  /* background-color: blue; */
+  padding-top: 50px;
+  padding-left: 50px;
+}
+.model-title .them{
+    padding-top: 50px;
+    font-size: 25px;
+    font-weight: bold;
+    /* color:rgb(223, 223, 238); */
+    margin-left: 40px;
+}
+/* 表格 */
+.list{
+    margin-left: 100px;
+    margin-top: 50px;
+    width: 835px;
+    height: 500px;
+    color:rgb(8, 6, 6)
+    /* background: cornflowerblue; */
+}
+.list-left{
+    /* background-color:chartreuse ; */
+    width: 835px;
+    position: relative;
+    /* height: 200px; */
+    padding-bottom: 50px;
+    display: inline-block;
+    /* background-color: orangered;  */
+}
+.list-right{
+    margin-bottom: 50px;
+}
+.addbtn{
+    font-size: 20px;
+    margin-left: 5px;
+    padding-top: 20px;
+}
+/* 搜索框 */
+.search{
+    position: absolute;
+    margin-left: 100px;
+    top: 25px;
+}
+.list input{
+    display: inline-block;
+}
+/* 页脚 */
+.footer{
+    width: 1000px;
+    position: absolute;
+    margin-left: 200px;
+    margin-top: 800px;
+    /* border-bottom: 1px solid coral; */
+}
+
+
+/* 添加数据表单 */
+
+.data-form{
+    width: 800px;
+    height: 300px;
+    border: 2px solid #0a1111;
+    /*background-color: #090e09;*/
+}
+.block-data{
+    margin-top: 20px;
+    width: 200px;
+    display: block;
+}
+.input-data{
+    display:inline-block;
+    width: 300px;
+    /* background-color: cadetblue; */
+}
+.all-data{
+    margin-left: 100px;
+}
+.block-data-btn{
+    margin-left: 10px;
+    margin-top: 50px;
+}
+.input-data-btn{
+    margin-left: 10px;
+}
+.input-data-btn input{
+    /* padding-left: 30px; */
+    margin-left: 20px;
+}
