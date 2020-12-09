@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.OrganizeDao">
+    <select id="findAll" resultType="com.pojo.Organize">
+        select* from t_organize
+    </select>
+
+
+<!--    or_id int (15) PRIMARY KEY NOT NULL auto_increment,-->
+<!--    number varchar(50) NOT NULL,-->
+<!--    branchame varchar(50) NOT NULL,-->
+<!--    address  varchar(50) NOT NULL,-->
+<!--    phone varchar(50) NOT NULL,-->
+<!--    personliable varchar(50) NOT NULL-->
+
+    <insert id="add" parameterType="com.pojo.Organize">
+        insert into t_organize(number,branchame,address,phone,personliable)
+        values (#{number},#{branchame},#{address},#{phone},#{personliable})
+    </insert>
+    <delete id="delete" parameterType="Integer">
+        delete from t_organize where id=#{id}
+    </delete>
+    <select id="findOrganizeByid" parameterType="Integer" resultType="com.pojo.Organize">
+        select * from t_organize where id=#{id}
+    </select>
+    <update id="update" parameterType="Integer">
+        update t_organize set u_name=#{u_name},u_password=#{u_password},t_name=#{t_name},
+        u_email=${u_email}
+    </update>
+
+</mapper>
