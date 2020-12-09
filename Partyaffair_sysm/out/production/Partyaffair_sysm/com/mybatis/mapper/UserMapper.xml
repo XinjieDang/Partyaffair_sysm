@@ -21,7 +21,7 @@
     </select>
     <update id="update" parameterType="Integer">
         update t_user set u_name=#{u_name},u_password=#{u_password},t_name=#{t_name},
-        u_email=${u_email}
+        u_email=${u_email} where id=#{id}
     </update>
     <select id="querys" resultType="com.pojo.User">
         select * from t_user

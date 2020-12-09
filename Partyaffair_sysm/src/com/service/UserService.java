@@ -12,6 +12,6 @@ public interface UserService {
     int delete(Integer id);
     User findUserByid(Integer id);
 
-    int update(Integer id);
+    int update(User user);
     List<User> querys(User user);
 }

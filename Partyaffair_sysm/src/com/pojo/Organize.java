@@ -7,6 +7,9 @@ public class Organize {
 //    address  varchar(50) NOT NULL,
 //    phone varchar(50) NOT NULL,
 //    personliable varchar(50) NOT NULL
+
+
+//    or_id=&number=001&branchame=dd&organizers=dd&phone=1888&personliable=dfdd
     private Integer or_id;
     private String number;
     private String branchame;

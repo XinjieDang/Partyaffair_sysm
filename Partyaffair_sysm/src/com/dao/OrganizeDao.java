@@ -23,18 +23,24 @@ public interface OrganizeDao {
 
     /**
      *删除
-     * @param id
+     * @param or_id
      * @return
      */
-    int delete(Integer id);
-    OrganizeDao findOrganizeByid(Integer id);
+    int delete(Integer or_id);
+
+    /**
+     * 查询单个记录
+     * @param or_id
+     * @return
+     */
+    Organize findOrganizeByid(Integer or_id);
 
     /**
      * 更新
-     * @param id
+     * @param organize
      * @return
      */
-    int update(Integer id);
+    int update(Organize organize);
 
     /**
      * 多条件查询
@@ -42,5 +48,5 @@ public interface OrganizeDao {
      * @return
      */
 
-    List<OrganizeDao> querys(OrganizeDao organize);
+    List<Organize> querys(Organize organize);
 }

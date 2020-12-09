@@ -70,7 +70,7 @@
         // 监听点击保存按钮事件
         $("#save").click(function() {
             // 获取输入内容
-            var uid=$("uid").val();
+            var uid=$("#uid").val();
             var uname = $("#uname").val();
             var upwd=$('#upwd').val();
             var tname = $("#tname").val();

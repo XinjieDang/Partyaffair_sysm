@@ -15,32 +15,33 @@
     <div class="model-title">
         <span class="them">组织列表</span>
     </div>
-    <div class="list">
+    <div class="list" style="width: 835px;">
         <div class="list-left">
             <!-- <input type="button" value="添加"> -->
             <div class="addbtn" style="float: left;">
-                <a href="${pageContext.request.contextPath}/route/edit" class="btn btn-sm btn-primary" id="adduser">添加</a>
+                <a href="${pageContext.request.contextPath}/organize/edit" class="btn btn-sm btn-primary" id="adduser">添加</a>
             </div>
 
             <div class="search" style="float: right;">
                 <form action="${pageContext.request.contextPath}/user/userList" method="post">
-                    id：<input type="text" id="uid" name="id" width="500px;">
-                    姓名：<input type="text" id="tname" name="t_name">
+                    编号：<input type="text" id="number" name="number" width="500px;">
+                    地址:<input type="text" id="address" name="address">
+                    负责人：<input type="text" id="personliable" name="personliable">
                     <input type="submit" id="search" value="搜索" class="btn btn-sm btn-primary">
                 </form>
             </div>
 
         </div>
-        <table class="table table-hover" id="sample_1">
+        <table class="table table-hover table-bordered" id="sample_1">
             <thead>
             <tr>
                 <th>组织id</th>
                 <th>编号</th>
                 <th>支部名称</th>
-                <th>联系电话</th>
                 <th>联系地址</th>
+                <th>联系电话</th>
                 <th>负责人</th>
-                <th style="text-align: center;">操作</th>
+                <th colspan="2" style="text-align: center;">操作</th>
             </tr>
             </thead>
             <tbody>
@@ -54,7 +55,7 @@
                     <th>${list.address}</th>
                     <th>${list.phone}</th>
                     <th>${list.personliable}</th>
-                    <th><a href="${pageContext.request.contextPath}/route/edit?id=${list.or_id}" class="btn btn-info btn-sm">编辑</a></th>
+                    <th><a href="${pageContext.request.contextPath}/organize/edit?or_id=${list.or_id}" class="btn btn-info btn-sm">编辑</a></th>
                     <th><button onclick="del(${list.or_id})" class="btn btn-danger btn-danger  btn-sm">删除</button></th>
                 </tr>
             </c:forEach>
@@ -82,16 +83,17 @@
 </div>
 <script>
     //监听删除按钮事件
-    function del(id){
+    function del(or_id){
         if(confirm("你真的要删除吗？")){
             $.ajax({
-                url:"${pageContext.request.contextPath}/user/delete",
+                url:"${pageContext.request.contextPath}/organize/delete",
                 async:true,
                 type:"POST",
                 data:{
-                    "id":id
+                    "or_id":or_id
                 },
                 success:function (data){
+                    alert("测试数据发送成功！");
                     console.log(data.result);
                     var code=data.code;
                     var msg=data.msg;

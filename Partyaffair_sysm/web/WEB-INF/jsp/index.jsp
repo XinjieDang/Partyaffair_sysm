@@ -38,6 +38,12 @@
                     <a href="${pageContext.request.contextPath}/organize/organizelist" id="test2">组织管理</a>
                 </li>
                 <li>
+                    <a href="#" id="test4">学生党员管理</a>
+                    <ul  class="side-hide" id="side-bottom1">
+                        <li><a href="${pageContext.request.contextPath}/student/studentlist">基本信息</a></li>
+                    </ul>
+                </li>
+                <li>
                     <a href="${pageContext.request.contextPath}/user/userList">用户管理</a>
                     <ul  class="side-hide" id="side-bottom4">
                         <li><a>首页二级菜单一</a></li>
@@ -58,16 +64,7 @@
 
                     </ul>
                 </li>
-                <li>
-                    <a href="#" id="test4">学生党员管理</a>
-                    <ul  class="side-hide" id="side-bottom1">
-                        <li><a>首页二级菜单一</a></li>
-                        <li><a>首页二级菜单一</a></li>
-                        <li><a>首页二级菜单一</a></li>
-                        <li><a>首页二级菜单一</a></li>
 
-                    </ul>
-                </li>
 
             </ul>
         </div>

@@ -34,7 +34,13 @@ public interface UserDao {
     int delete(Integer id);
     User findUserByid(Integer id);
 
-    int update(Integer id);
+    /**
+     * 修改用户
+     * @param id
+     * @return
+     */
+
+    int update(User user);
 
     List<User> querys(User user);
 }

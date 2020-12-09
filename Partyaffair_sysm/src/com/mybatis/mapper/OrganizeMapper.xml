@@ -20,14 +20,28 @@
         values (#{number},#{branchame},#{address},#{phone},#{personliable})
     </insert>
     <delete id="delete" parameterType="Integer">
-        delete from t_organize where id=#{id}
+        delete from t_organize where or_id=#{id}
     </delete>
     <select id="findOrganizeByid" parameterType="Integer" resultType="com.pojo.Organize">
-        select * from t_organize where id=#{id}
+        select * from t_organize where or_id=#{id}
     </select>
-    <update id="update" parameterType="Integer">
-        update t_organize set u_name=#{u_name},u_password=#{u_password},t_name=#{t_name},
-        u_email=${u_email}
+    <update id="update" parameterType="com.pojo.Organize">
+        update t_organize set number=#{number},branchame=#{branchame},address=#{address},
+        phone=#{phone},personliable=#{personliable} where or_id=#{or_id}
     </update>
+    <select id="querys" parameterType="com.pojo.Organize" resultType="com.pojo.Organize">
+        select * from t_organize
+        <where>
+            <if test="number!=null">
+            and number=#{number}
+            </if>
+            <if test="address!=null">
+                and address LIKE '%' #{address} '%'
+            </if>
+            <if test="personliable!=null">
+                and personliable LIKE '%' #{personliable} '%'
+            </if>
+        </where>
+    </select>
 
 </mapper>

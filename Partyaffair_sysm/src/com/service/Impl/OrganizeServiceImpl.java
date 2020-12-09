@@ -1,5 +1,6 @@
 package com.service.Impl;
 
+import com.base.ResultInfo;
 import com.dao.OrganizeDao;
 import com.pojo.Organize;
 import com.service.OrganizeService;
@@ -26,25 +27,61 @@ public class OrganizeServiceImpl implements OrganizeService {
         return true;
     }
     @Override
-    public String add(Organize organize) {
-        return null;
+    public ResultInfo add(Organize organize) {
+        ResultInfo resultInfo=new ResultInfo();
+        int result=0;
+        //id 不为空作修改
+        if(organize.getOr_id()!=null){
+            result=organizeDao.update(organize);
+            if(result<0){
+                System.out.println("修改失败");
+                resultInfo.setCode(500);
+                resultInfo.setMsg("操作失败！");
+            }
+        }
+        else {//添加
+            result=organizeDao.add(organize);
+            if(result<0){
+                System.out.println("添加失败！");
+                resultInfo.setCode(500);
+                resultInfo.setMsg("操作失败！");
+            }
+
+        }
+        return resultInfo;
     }
 
     @Override
-    public String delete(Integer id) {
-        return null;
+    public ResultInfo delete(Integer or_id) {
+        ResultInfo resultInfo=new ResultInfo();
+        int result=0;
+        if(or_id!=null){
+            result=organizeDao.delete(or_id);
+            if(result<0){
+                resultInfo.setCode(500);
+                resultInfo.setMsg("删除失败！");
+            }
+        }
+        else{
+            resultInfo.setCode(500);
+            resultInfo.setMsg("删除失败！");
+        }
+        return resultInfo;
     }
 
     @Override
-    public String findOrganizeByid(Integer id) {
-        return null;
+    public boolean findOrganizeByid(Integer or_id,Model model) {
+        if(or_id!=null){
+            Organize organize=organizeDao.findOrganizeByid(or_id);
+            System.out.println(organize.toString());
+            model.addAttribute("organizers",organize);
+            return true;
+        }
+        else {
+            System.out.println("没有这条记录！");
+            return false;
+        }
     }
-
-    @Override
-    public String update(Integer id) {
-        return null;
-    }
-
     @Override
     public String querys(Organize organize) {
         return null;

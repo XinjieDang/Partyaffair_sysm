@@ -71,7 +71,7 @@ public class UserController {
         int result=0;
         //id 不为空作修改
         if(user.getId()!=null){
-            result=userService.update(user.getId());
+            result=userService.update(user);
             if(result>0){
                 System.out.println("修改成功");
                 resultInfo.setCode(200);
