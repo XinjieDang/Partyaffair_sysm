@@ -49,4 +49,6 @@ public interface OrganizeDao {
      */
 
     List<Organize> querys(Organize organize);
+
+    List<Organize> queryOrganizeName();
 }

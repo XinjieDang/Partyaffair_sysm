@@ -19,18 +19,18 @@
     <select id="findUserByid" parameterType="Integer" resultType="com.pojo.User">
         select * from t_user where id=#{id}
     </select>
-    <update id="update" parameterType="Integer">
+    <update id="update" parameterType="com.pojo.User">
         update t_user set u_name=#{u_name},u_password=#{u_password},t_name=#{t_name},
-        u_email=${u_email} where id=#{id}
+        u_email=#{u_email} where id=#{id}
     </update>
     <select id="querys" resultType="com.pojo.User">
         select * from t_user
         <where>
-            <if test="id!=null">
+            <if test="id!=null and id!=''">
                 and id=#{id}
             </if>
-            <if test="t_name!=null">
-                and t_name LIKE '%' #{t_name} '%'
+            <if test="t_name!=null and t_name!=''">
+                and t_name LIKE concat ('%','${t_name}','%')
             </if>
         </where>
     </select>

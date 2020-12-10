@@ -23,7 +23,7 @@
             </div>
 
             <div class="search" style="float: right;">
-                <form action="${pageContext.request.contextPath}/user/query" method="post">
+                <form action="${pageContext.request.contextPath}/user/userList" method="post">
                     id：<input type="text" id="uid" name="id" width="500px;">
                     姓名：<input type="text" id="tname" name="t_name">
                     <input type="submit" id="search" value="搜索" class="btn btn-sm btn-primary">

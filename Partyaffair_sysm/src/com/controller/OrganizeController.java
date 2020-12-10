@@ -21,9 +21,11 @@ public class OrganizeController {
     @Autowired
     private OrganizeService organizeService;
     @RequestMapping("organizelist")
-    public String organizelist(Model model){
-        organizeService.findAll(model);
-       return "organize/organize_list";
+    public String organizelist(Organize organize,Model model){
+        if(organizeService.querys(organize,model)){
+            return "organize/organize_list";
+        }
+        return "organize/organize_list";
     }
     @RequestMapping(value = "delete",method = RequestMethod.POST)
     @ResponseBody

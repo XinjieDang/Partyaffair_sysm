@@ -32,16 +32,20 @@
     <select id="querys" parameterType="com.pojo.Organize" resultType="com.pojo.Organize">
         select * from t_organize
         <where>
-            <if test="number!=null">
+            <if test="number!=null and number!=''">
             and number=#{number}
             </if>
-            <if test="address!=null">
-                and address LIKE '%' #{address} '%'
+            <if test="address!=null and address!=''">
+                and address LIKE concat ('%','${address}','%')
             </if>
-            <if test="personliable!=null">
-                and personliable LIKE '%' #{personliable} '%'
+            <if test="personliable!=null and personliable!=''">
+                and personliable LIKE concat ('%','${personliable}','%')
             </if>
+
         </where>
     </select>
 
+    <select id="queryOrganizeName" resultType="com.pojo.Organize">
+          select or_id,branchame from t_organize
+    </select>
 </mapper>

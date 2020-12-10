@@ -51,7 +51,7 @@
                     <div class="form-group">
                         <label for="inputPassword3" class="col-sm-2 control-label">邮箱</label>
                         <div class="col-sm-10">
-                            <input type="email" value="${users.u_email}" id="uemail" class="form-control" id="inputPassword3" placeholder="邮箱" name="u_email">
+                            <input type="text" value="${users.u_email}" id="uemail" class="form-control" placeholder="邮箱" name="u_email">
                         </div>
                     </div>
 
@@ -119,7 +119,7 @@
                     }
                     else {
                         var msg=data.msg;
-                        alert("msg");
+                        alert(msg);
                     }
 
                 },

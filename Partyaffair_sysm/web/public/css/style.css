@@ -227,7 +227,7 @@ a{
 .data-form{
     width: 800px;
     height: 300px;
-    border: 2px solid #0a1111;
+    /*border: 2px solid #0a1111;*/
     /*background-color: #090e09;*/
 }
 .block-data{

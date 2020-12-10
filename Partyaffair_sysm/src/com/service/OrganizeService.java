@@ -12,5 +12,6 @@ public interface OrganizeService {
     ResultInfo add(Organize organize);
     ResultInfo delete(Integer or_id);
     boolean findOrganizeByid(Integer id,Model model);
-    String querys(Organize organize);
+    boolean querys(Organize organize, Model model);
+    ResultInfo queryOrganizeName();
 }

@@ -83,7 +83,30 @@ public class OrganizeServiceImpl implements OrganizeService {
         }
     }
     @Override
-    public String querys(Organize organize) {
-        return null;
+    public boolean querys(Organize organize,Model model) {
+        System.out.println(organize.toString());
+        if(organize!=null){
+            //条件查询
+            List<Organize> list=organizeDao.querys(organize);
+            model.addAttribute("list",list);
+            System.out.println("查询成功！");
+            return true;
+        }else if (organize==null){//查询所有
+            List<Organize> list=organizeDao.findAll();
+            model.addAttribute("list",list);
+            System.out.println("查询成功！");
+            return true;
+        }else{
+            System.out.println("查找无记录！");
+            return false;
+        }
+    }
+
+    @Override
+    public ResultInfo queryOrganizeName() {
+        List<Organize> organize=organizeDao.queryOrganizeName();
+        ResultInfo resultInfo=new ResultInfo();
+        resultInfo.setResult(organize);
+        return resultInfo;
     }
 }

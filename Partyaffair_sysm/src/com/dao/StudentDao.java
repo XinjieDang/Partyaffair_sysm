@@ -2,9 +2,12 @@ package com.dao;
 
 import com.pojo.Organize;
 import com.pojo.Student;
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
+@Repository
+@Mapper
 public interface StudentDao {
     /**
      * 查询学生基本信息

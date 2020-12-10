@@ -23,7 +23,7 @@
             </div>
 
             <div class="search" style="float: right;">
-                <form action="${pageContext.request.contextPath}/user/userList" method="post">
+                <form action="${pageContext.request.contextPath}/organize/organizelist" method="post">
                     编号：<input type="text" id="number" name="number" width="500px;">
                     地址:<input type="text" id="address" name="address">
                     负责人：<input type="text" id="personliable" name="personliable">

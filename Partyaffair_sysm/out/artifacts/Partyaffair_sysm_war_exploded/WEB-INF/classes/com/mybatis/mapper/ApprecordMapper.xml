@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.ApprecordDao">
+    <select id="findAll" resultType="com.pojo.Apprecord">
+        select* from  t_Apprecord
+    </select>
+
+<!--    ask_id int (15) PRIMARY KEY NOT NULL auto_increment,-->
+<!--    ask_number varchar(50) NOT NULL,-->
+<!--    stu_id int (15) ,-->
+<!--    current  varchar(50),-->
+<!--    askdev varchar(50),-->
+<!--    cre_time  date,-->
+<!--    Reviewer varchar(50) NOT NULL,-->
+<!--    askstatus varchar(50) NOT NULL-->
+
+    <insert id="add" parameterType="com.pojo.Apprecord">
+        insert into t_Apprecord (ask_number,stu_id,currents,askdev,cre_time,reviewer,askstatus)
+        values (#{ask_number},#{stu_id},#{currents},#{askdev},#{cre_time},#{reviewer},#{askstatus})
+    </insert>
+    <delete id="delete" parameterType="Integer">
+        delete from t_Apprecord where ask_id=#{ask_id}
+    </delete>
+    <select id="findApprecordByid" parameterType="Integer" resultType="com.pojo.Apprecord">
+        select * from t_Apprecord where res_id=#{res_id}
+    </select>
+    <update id="update" parameterType="com.pojo.Apprecord">
+        update t_Apprecord set ask_number=#{ask_number},stu_id=#{stu_id},currents=#{currents},
+        askdev=#{askdev},cre_time=#{cre_time},reviewer=#{reviewer},askstatus=#{askstatus}
+        where ask_id=#{ask_id}
+    </update>
+    <select id="querys" parameterType="com.pojo.Apprecord" resultType="com.pojo.Developresult">
+       <!--多条件查询 申请编号、发展状态 -->
+        select * from t_developresult
+        <where>
+            <if test="ask_number!=null and ask_number!=''">
+                and ask_number=#{ask_number}
+            </if>
+            <if test="currents!=null and currents!=''">
+                and currents LIKE concat ('%','${currents}','%')
+            </if>
+        </where>
+    </select>
+</mapper>

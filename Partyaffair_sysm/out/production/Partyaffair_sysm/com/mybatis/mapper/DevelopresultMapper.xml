@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.DevelopresultDao">
+    <select id="findAll" resultType="com.pojo.Developresult">
+        select* from t_developresult
+    </select>
+
+
+<!--    res_id int (15) PRIMARY KEY NOT NULL auto_increment,-->
+<!--    ask_id int (15),-->
+<!--    audit varchar(50) NOT NULL,-->
+<!--    devresult varchar(50) NOT NULL,-->
+<!--    Approved varchar(50) NOT NULL,-->
+<!--    cre_time date-->
+
+    <insert id="add" parameterType="com.pojo.Developresult">
+        insert into t_developresult(ask_id,audit,devresult,approved,cre_time)
+        values (#{ask_id},#{audit},#{devresult},#{approved},#{cre_time})
+    </insert>
+    <delete id="delete" parameterType="Integer">
+        delete from t_developresult where res_id=#{res_id}
+    </delete>
+    <select id="findDevelopresultByid" parameterType="Integer" resultType="com.pojo.Developresult">
+        select * from t_developresult where res_id=#{res_id}
+    </select>
+    <update id="update" parameterType="com.pojo.Developresult">
+        update t_developresult set ask_id=#{ask_id},audit=#{audit},devresult=#{devresult},
+        approved=#{approved},cre_time=#{cre_time} where res_id=#{res_id}
+    </update>
+    <select id="querys" parameterType="com.pojo.Developresult" resultType="com.pojo.Developresult">
+       <!--多条件查询 审核结果、时间 -->
+        select * from t_developresult
+        <where>
+            <if test="audit!=null and audit!=''">
+                and audit=#{audit}
+            </if>
+            <if test="cre_time!=null and cre_time!=''">
+                and cre_time LIKE concat ('%','${cre_time}','%')
+            </if>
+        </where>
+    </select>
+</mapper>

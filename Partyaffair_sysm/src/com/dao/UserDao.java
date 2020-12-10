@@ -36,7 +36,7 @@ public interface UserDao {
 
     /**
      * 修改用户
-     * @param id
+     * @param user
      * @return
      */
 
