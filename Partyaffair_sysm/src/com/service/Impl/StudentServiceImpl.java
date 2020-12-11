@@ -91,4 +91,15 @@ public class StudentServiceImpl implements StudentService {
         //存到域
         model.addAttribute("list",new_list);
     }
+
+    @Override
+    public ResultInfo queryStudentName() {
+        ResultInfo resultInfo=new ResultInfo();
+        List<Student> list=studentDao.queryStudentName();
+        if(list==null){
+            resultInfo.setMsg("无记录！");
+        }
+        resultInfo.setResult(list);
+        return resultInfo;
+    }
 }

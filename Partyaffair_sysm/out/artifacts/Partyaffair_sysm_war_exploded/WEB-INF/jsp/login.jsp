@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="a" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,7 +8,7 @@
     <title>党务管理系统</title>
     <jsp:include page="common.jsp"></jsp:include>
 </head>
-<body>
+<body style="background:url(${pageContext.request.contextPath}/public/images/login.jpg);">
 <div class="login">
     <div class="form-data">
         <span style="color: red;font-size: 12px;text-align: center">${msg}</span>

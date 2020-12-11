@@ -187,10 +187,7 @@
                 if (code == 200) {
                     alert("操作成功！")
                     // 跳转至列表
-
                     window.location.href = "${pageContext.request.contextPath}/student/studentlist";
-
-
                 } else {
                     var msg = data.msg;
                     alert(msg);

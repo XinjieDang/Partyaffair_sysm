@@ -4,6 +4,7 @@ html,body{
     padding: 0;
     width: 100%;
     height: 100%;
+    /*background-image: url("../../public/images/login.jpg");*/
 }
 body{
     overflow-x:hidden;
@@ -157,7 +158,7 @@ a{
 /* 右边主体 */
 .side-right{
     position: absolute;
-    margin-left:200px;
+    margin-left:170px;
     /*left: 100px;*/
     /* width: 1300px; */
     height: 800px;

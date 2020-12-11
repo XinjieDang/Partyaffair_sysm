@@ -49,4 +49,18 @@ public interface ApprecordDao {
      */
 
     List<Apprecord> querys(Apprecord apprecord);
+
+    /**
+     * 申请状态改为不通过，列表页不显示
+     * @param ask_id
+     * @return
+     */
+
+    int updateStatus(Integer ask_id);
+
+    /**
+     * 查看被驳回的申请记录
+     * @return
+     */
+    List<Apprecord> findreject();
 }

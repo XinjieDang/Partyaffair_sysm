@@ -151,7 +151,7 @@
             type: "post",
             url: "${pageContext.request.contextPath}/student/getOrganize",
             success:function(data){
-                alert("测试发送数据成功！")
+                // alert("测试发送数据成功！")
                 console.log(data.result);
                 var data=data.result;
                 $.each(data,function (index,item){
@@ -181,17 +181,13 @@
             data: form_data,
             //请求成功
             success: function (data) {
-                alert("测试数据提交！")
                 console.log(data);
                 // 获取集合属性
                 var code = data.code;
                 if (code == 200) {
-                    alert("操作成功！1秒后跳转列表页...")
+                    alert("操作成功！")
                     // 跳转至列表
-
                     window.location.href = "${pageContext.request.contextPath}/student/studentlist";
-
-
                 } else {
                     var msg = data.msg;
                     alert(msg);

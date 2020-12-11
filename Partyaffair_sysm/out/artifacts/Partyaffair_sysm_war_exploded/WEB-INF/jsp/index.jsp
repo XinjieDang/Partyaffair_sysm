@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <jsp:include page="common.jsp"></jsp:include>
-    <title>党务管理</title>
+    <title>党务管理系统</title>
     <style>
     </style>
 </head>
@@ -44,26 +44,21 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="${pageContext.request.contextPath}/user/userList">用户管理</a>
-                    <ul  class="side-hide" id="side-bottom4">
-                        <li><a>首页二级菜单一</a></li>
-                        <li><a>首页二级菜单一</a></li>
-                        <li><a>首页二级菜单一</a></li>
-                        <li><a>首页二级菜单一</a></li>
-
+                    <a href="#" id="test3">党员发展管理</a>
+                    <ul  class="side-hide" id="side-bottom2">
+                        <li><a href="${pageContext.request.contextPath}/apprecord/apprecordlist">申请记录</a></li>
+                        <li><a>发展结果记录</a></li>
                     </ul>
                 </li>
 
                 <li>
-                    <a href="#" id="test3">权限管理</a>
-                    <ul  class="side-hide" id="side-bottom2">
-                        <li><a>首页二级菜单一</a></li>
-                        <li><a>首页二级菜单一</a></li>
-                        <li><a>首页二级菜单一</a></li>
-                        <li><a>首页二级菜单一</a></li>
-
+                    <a href="${pageContext.request.contextPath}/user/userList">用户管理</a>
+                    <ul  class="side-hide" id="side-bottom4">
+                        <li><a>个人信息</a></li>
                     </ul>
                 </li>
+
+
 
 
             </ul>

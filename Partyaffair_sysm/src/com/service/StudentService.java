@@ -11,4 +11,5 @@ public interface StudentService {
     ResultInfo delete(Integer or_id);
     boolean findStudentByid(Integer id,Model model);
     void querys(Student Student, Model model);
+    ResultInfo queryStudentName();
 }

@@ -8,6 +8,8 @@
         <mapper resource="com/mybatis/mapper/UserMapper.xml"></mapper>
         <mapper resource="com/mybatis/mapper/OrganizeMapper.xml"></mapper>
         <mapper resource="com/mybatis/mapper/StudentMapper.xml"></mapper>
+        <mapper resource="com/mybatis/mapper/ApprecordMapper.xml"></mapper>
+        <mapper resource="com/mybatis/mapper/DevelopresultMapper.xml"></mapper>
     </mappers>
 
 </configuration>

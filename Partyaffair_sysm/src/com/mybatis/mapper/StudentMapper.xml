@@ -52,4 +52,8 @@
         </where>
     </select>
 
+    <select id="queryStudentName" resultType="com.pojo.Student">
+        select stu_id,sname from t_student
+    </select>
+
 </mapper>

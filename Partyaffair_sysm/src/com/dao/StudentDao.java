@@ -51,4 +51,6 @@ public interface StudentDao {
      */
 
     List<Student> querys(Student student);
+
+    List<Student> queryStudentName();
 }

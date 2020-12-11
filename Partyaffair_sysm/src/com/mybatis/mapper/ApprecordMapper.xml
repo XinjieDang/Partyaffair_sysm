@@ -10,7 +10,7 @@
 <!--    ask_id int (15) PRIMARY KEY NOT NULL auto_increment,-->
 <!--    ask_number varchar(50) NOT NULL,-->
 <!--    stu_id int (15) ,-->
-<!--    current  varchar(50),-->
+<!--    currents  varchar(50),-->
 <!--    askdev varchar(50),-->
 <!--    cre_time  date,-->
 <!--    Reviewer varchar(50) NOT NULL,-->
@@ -24,16 +24,16 @@
         delete from t_Apprecord where ask_id=#{ask_id}
     </delete>
     <select id="findApprecordByid" parameterType="Integer" resultType="com.pojo.Apprecord">
-        select * from t_Apprecord where res_id=#{res_id}
+        select * from t_Apprecord where ask_id=#{ask_id}
     </select>
     <update id="update" parameterType="com.pojo.Apprecord">
         update t_Apprecord set ask_number=#{ask_number},stu_id=#{stu_id},currents=#{currents},
         askdev=#{askdev},cre_time=#{cre_time},reviewer=#{reviewer},askstatus=#{askstatus}
         where ask_id=#{ask_id}
     </update>
-    <select id="querys" parameterType="com.pojo.Apprecord" resultType="com.pojo.Developresult">
+    <select id="querys" parameterType="com.pojo.Apprecord" resultType="com.pojo.Apprecord">
        <!--多条件查询 申请编号、发展状态 -->
-        select * from t_developresult
+        select * from t_Apprecord
         <where>
             <if test="ask_number!=null and ask_number!=''">
                 and ask_number=#{ask_number}
@@ -41,6 +41,14 @@
             <if test="currents!=null and currents!=''">
                 and currents LIKE concat ('%','${currents}','%')
             </if>
+            and askstatus='审核中' or askstatus='已通过'
         </where>
+    </select>
+    <update id="updateStatus" parameterType="Integer">
+        update t_Apprecord set askstatus='不通过' where ask_id=#{ask_id}
+    </update>
+
+    <select id="findreject" resultType="com.pojo.Apprecord">
+       select * from t_Apprecord where askstatus='不通过'
     </select>
 </mapper>
