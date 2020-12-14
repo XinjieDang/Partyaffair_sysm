@@ -1,5 +1,7 @@
 package com.dao;
 
+import com.pojo.DevResult;
+import com.pojo.DevResultDetail;
 import com.pojo.Developresult;
 import com.pojo.Student;
 import org.apache.ibatis.annotations.Mapper;
@@ -51,4 +53,13 @@ public interface DevelopresultDao {
      */
 
     List<Developresult> querys(Developresult developresult);
+
+   List<DevResult> queryResult(DevResult developresult);
+
+    /**
+     * 查询发展结果详情
+     * @param res_id
+     * @return
+     */
+   DevResultDetail querysDetail(Integer res_id);
 }

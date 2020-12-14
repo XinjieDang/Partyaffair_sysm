@@ -8,13 +8,6 @@
     </select>
 
 
-<!--    res_id int (15) PRIMARY KEY NOT NULL auto_increment,-->
-<!--    ask_id int (15),-->
-<!--    audit varchar(50) NOT NULL,-->
-<!--    devresult varchar(50) NOT NULL,-->
-<!--    Approved varchar(50) NOT NULL,-->
-<!--    cre_time date-->
-
     <insert id="add" parameterType="com.pojo.Developresult">
         insert into t_developresult(ask_id,audit,devresult,approved,cre_time)
         values (#{ask_id},#{audit},#{devresult},#{approved},#{cre_time})
@@ -30,7 +23,7 @@
         approved=#{approved},cre_time=#{cre_time} where res_id=#{res_id}
     </update>
     <select id="querys" parameterType="com.pojo.Developresult" resultType="com.pojo.Developresult">
-       <!--多条件查询 审核结果、时间 -->
+        <!--多条件查询 审核结果、时间 -->
         select * from t_developresult
         <where>
             <if test="audit!=null and audit!=''">
@@ -40,5 +33,28 @@
                 and cre_time LIKE concat ('%','${cre_time}','%')
             </if>
         </where>
+    </select>
+
+    <select id="queryResult" resultType="com.pojo.DevResult">
+      select dev.res_id,ask.ask_number,dev.audit,dev.devresult,dev.approved ,dev.cre_time from t_developresult dev
+ LEFT join t_apprecord ask on dev.ask_id=ask.ask_id
+
+        <where>
+            <if test="audit!=null and dev.audit!=''">
+                and audit=#{audit}
+            </if>
+            <if test="cre_time!=null and dev.cre_time!=''">
+                and cre_time LIKE concat ('%','${cre_time}','%')
+            </if>
+        </where>
+
+    </select>
+
+
+    <select id="querysDetail" resultType="com.pojo.DevResultDetail" parameterType="Integer">
+
+   select dev.res_id,s.stu_number,s.sname,dev.devresult,dev.approved,dev.cre_time
+ from (t_developresult dev left join t_apprecord ask on dev.ask_id=ask.ask_id)
+ left join t_student s on ask.stu_id=s.stu_id where  dev.res_id=#{res_id}
     </select>
 </mapper>

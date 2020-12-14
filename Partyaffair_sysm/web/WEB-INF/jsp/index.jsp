@@ -47,7 +47,7 @@
                     <a href="#" id="test3">党员发展管理</a>
                     <ul  class="side-hide" id="side-bottom2">
                         <li><a href="${pageContext.request.contextPath}/apprecord/apprecordlist">申请记录</a></li>
-                        <li><a>发展结果记录</a></li>
+                        <li><a href="${pageContext.request.contextPath}/developresult/developresultlist">发展结果记录</a></li>
                     </ul>
                 </li>
 

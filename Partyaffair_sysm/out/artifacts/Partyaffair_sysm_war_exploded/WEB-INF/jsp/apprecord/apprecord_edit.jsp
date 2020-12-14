@@ -117,6 +117,8 @@
 
     //页面一加载，获取所属组织数据，绑定到下拉框
     $(function () {
+
+
         $.ajax({
             type: "post",
             url: "${pageContext.request.contextPath}/apprecord/getStudent",
@@ -132,6 +134,9 @@
             },
 
         });
+
+        $('#select-student').val("3")
+
     });
 
 
