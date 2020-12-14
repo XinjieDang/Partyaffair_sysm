@@ -51,4 +51,9 @@
     <select id="findreject" resultType="com.pojo.Apprecord">
        select * from t_Apprecord where askstatus='不通过'
     </select>
+
+
+    <select id="getaskNumber" resultType="com.pojo.Apprecord">
+        select  ask_id,ask_number from t_Apprecord
+    </select>
 </mapper>

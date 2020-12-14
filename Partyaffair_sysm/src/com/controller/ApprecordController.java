@@ -42,7 +42,10 @@ public class ApprecordController {
         return resultInfo;
     }
     @RequestMapping("edit")
-    public String edit(){
+    public String edit(Integer ask_id,Model model){
+        if(ask_id!=null){
+            apprecordService.findApprecordByid(ask_id,model);
+        }
         return "apprecord/apprecord_edit";
     }
     @ResponseBody

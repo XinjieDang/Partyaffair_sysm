@@ -63,4 +63,5 @@ public interface ApprecordDao {
      * @return
      */
     List<Apprecord> findreject();
+    List<Apprecord> getaskNumber();
 }

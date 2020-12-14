@@ -3,6 +3,7 @@ package com.service.Impl;
 import com.base.ResultInfo;
 import com.dao.OrganizeDao;
 import com.dao.StudentDao;
+import com.pojo.Apprecord;
 import com.pojo.Organize;
 import com.pojo.Student;
 import com.service.StudentService;
@@ -69,8 +70,14 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public boolean findStudentByid(Integer id, Model model) {
-        return false;
+    public boolean findStudentByid(Integer stu_id, Model model) {
+        Student student = studentDao.findStudentByid(stu_id);
+        if (student == null) {
+            return false;
+        }
+
+        model.addAttribute("students", student);
+        return true;
     }
 
     @Override

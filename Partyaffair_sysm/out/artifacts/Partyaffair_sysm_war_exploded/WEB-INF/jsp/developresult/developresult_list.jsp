@@ -15,9 +15,7 @@
     <div class="model-title">
         <span class="them">发展结果记录</span>
     </div>
-    <div class="addbtn" style="float: left;margin-left:100px;">
-        <a href="${pageContext.request.contextPath}/developresult/reject" class="btn btn-sm btn-warning" id="addusers">查看被驳回记录</a>
-    </div>
+
     <div class="list" style="width: 835px;">
         <div class="list-left">
             <!-- <input type="button" value="添加"> -->
@@ -58,7 +56,7 @@
                         <th>${list.approved}</th>
                         <th>${list.cre_time}</th>
                         <th><a href="${pageContext.request.contextPath}/developresult/details?res_id=${list.res_id}" class="btn btn-info btn-sm">详情</a></th>
-                        <th><a href="${pageContext.request.contextPath}/developresult/edit?res_id=${list.res_id}" class="btn btn-info btn-sm">编辑</a></th>
+                        <th><a href="${pageContext.request.contextPath}/developresult/edit?res_id=${list.res_id}" class="btn btn-info btn-sm">审核</a></th>
                         <th><button onclick="del(${list.res_id})" class="btn btn-danger btn-danger  btn-sm">删除</button></th>
                     </tr>
                 </c:forEach>

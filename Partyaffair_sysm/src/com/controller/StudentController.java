@@ -29,7 +29,11 @@ public class StudentController {
         return "student/student_list";
     }
     @RequestMapping("edit")
-    public String edit(Integer or_id,Model model){
+    public String edit(Integer stu_id,Model model){
+
+        if(stu_id!=null){
+            studentService.findStudentByid(stu_id,model);
+        }
         return "student/student_edit";
     }
     @RequestMapping(value = "delete",method = RequestMethod.POST)

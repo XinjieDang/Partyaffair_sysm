@@ -2,10 +2,11 @@ package com.pojo;
 
 public class Developresult {
     private Integer res_id;
-
-    public Integer getRes_id() {
-        return res_id;
-    }
+    private Integer ask_id;
+    private String apprecord;
+    private String audit;//审核结果
+    private  String devresult;//发展结果
+    private String approved;//审批人
 
     @Override
     public String toString() {
@@ -13,11 +14,15 @@ public class Developresult {
                 "res_id=" + res_id +
                 ", ask_id=" + ask_id +
                 ", apprecord='" + apprecord + '\'' +
-                ", audit=" + audit +
+                ", audit='" + audit + '\'' +
                 ", devresult='" + devresult + '\'' +
                 ", approved='" + approved + '\'' +
                 ", cre_time='" + cre_time + '\'' +
                 '}';
+    }
+
+    public Integer getRes_id() {
+        return res_id;
     }
 
     public void setRes_id(Integer res_id) {
@@ -40,11 +45,11 @@ public class Developresult {
         this.apprecord = apprecord;
     }
 
-    public Integer getAudit() {
+    public String getAudit() {
         return audit;
     }
 
-    public void setAudit(Integer audit) {
+    public void setAudit(String audit) {
         this.audit = audit;
     }
 
@@ -72,16 +77,6 @@ public class Developresult {
         this.cre_time = cre_time;
     }
 
-    private Integer ask_id;
-    private String apprecord;
-    private Integer audit;//审核结果
-    private  String devresult;//发展结果
-    private String approved;//审批人
     private String cre_time;
-//    res_id int (15) PRIMARY KEY NOT NULL auto_increment,
-//    ask_id int (15),
-//    audit varchar(50) NOT NULL,
-//    devresult varchar(50) NOT NULL,
-//    Approved varchar(50) NOT NULL,
-//    cre_time date
+
 }

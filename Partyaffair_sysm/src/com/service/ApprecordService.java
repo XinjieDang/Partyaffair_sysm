@@ -4,6 +4,8 @@ import com.base.ResultInfo;
 import com.pojo.Apprecord;
 import org.springframework.ui.Model;
 
+import java.util.List;
+
 public interface ApprecordService {
     boolean findAll(Model model);
     ResultInfo add(Apprecord apprecord);
@@ -12,4 +14,5 @@ public interface ApprecordService {
     void querys(Apprecord apprecord, Model model);
     ResultInfo updateStatus(Integer ask_id);
     void findreject(Model model);
+    ResultInfo getaskNumber();
 }

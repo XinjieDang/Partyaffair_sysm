@@ -114,10 +114,10 @@
                         <div class="col-sm-10">
                             <select name="familyorign" id="familyorign" class="form-control">
                                 <option value="">选择家庭出身</option>
-                                <option value="工员" ${stas.education eq "工员"?"selected":"" }>工员</option>
-                                <option value="干部" ${stas.education eq "干部"?"selected":"" }>干部</option>
-                                <option value="职员" ${stas.education eq "职员"?"selected":"" }>职员</option>
-                                <option value="自由职业" ${stas.education eq "自由职业"?"selected":"" }>自由职业</option>
+                                <option value="工员" ${students.familyorign eq "工员"?"selected":"" }>工员</option>
+                                <option value="干部" ${students.familyorign eq "干部"?"selected":"" }>干部</option>
+                                <option value="职员" ${students.familyorign eq "职员"?"selected":"" }>职员</option>
+                                <option value="自由职业" ${students.familyorign eq "自由职业"?"selected":"" }>自由职业</option>
                             </select>
                         </div>
                     </div>

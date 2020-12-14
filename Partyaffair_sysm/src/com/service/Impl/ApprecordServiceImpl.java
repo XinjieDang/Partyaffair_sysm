@@ -52,7 +52,12 @@ public class ApprecordServiceImpl implements ApprecordService {
 
     @Override
     public boolean findApprecordByid(Integer ask_id, Model model) {
-        return false;
+        Apprecord apprecord=apprecordDao.findApprecordByid(ask_id);
+        if(apprecord==null){
+            return false;
+        }
+        model.addAttribute("apprecord",apprecord);
+        return true;
     }
 
     @Override
@@ -93,5 +98,17 @@ public class ApprecordServiceImpl implements ApprecordService {
     public void findreject(Model model) {
         List<Apprecord>apprecords=apprecordDao.findreject();
         model.addAttribute("list",apprecords);
+    }
+
+    @Override
+    public ResultInfo getaskNumber() {
+        ResultInfo resultInfo =new ResultInfo();
+        List<Apprecord> apprecords=apprecordDao.getaskNumber();
+        if(apprecords==null){
+            resultInfo.setCode(500);
+            resultInfo.setMsg("查找无记录！");
+        }
+        resultInfo.setResult(apprecords);
+        return resultInfo;
     }
 }

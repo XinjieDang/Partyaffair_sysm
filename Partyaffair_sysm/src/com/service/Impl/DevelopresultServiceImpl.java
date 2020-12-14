@@ -19,7 +19,24 @@ public class DevelopresultServiceImpl implements DevelopresultService {
     private DevelopresultDao developresultDao;
     @Override
     public ResultInfo add(Developresult developresult) {
-        return null;
+        ResultInfo resultInfo=new ResultInfo();
+        int result=0;
+        //修改
+        if(developresult.getRes_id()!=null){
+            result=developresultDao.update(developresult);
+            if(result<0){
+                resultInfo.setCode(500);
+                resultInfo.setMsg("操作失败!");
+            }
+        }
+        else {//添加新记录
+            result=developresultDao.add(developresult);
+            if (result<0){
+                resultInfo.setCode(500);
+                resultInfo.setMsg("操作失败!");
+            }
+        }
+        return resultInfo;
     }
 
     @Override
@@ -35,7 +52,13 @@ public class DevelopresultServiceImpl implements DevelopresultService {
      */
     @Override
     public boolean findDevelopresultByid(Integer res_id, Model model) {
-        return false;
+
+       Developresult developresult= developresultDao.findDevelopresultByid(res_id);
+       if(developresult==null){
+           return false;
+       }
+       model.addAttribute("developresult",developresult);
+        return true;
     }
 
     @Override

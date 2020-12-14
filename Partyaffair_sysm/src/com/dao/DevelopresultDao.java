@@ -54,7 +54,7 @@ public interface DevelopresultDao {
 
     List<Developresult> querys(Developresult developresult);
 
-   List<DevResult> queryResult(DevResult developresult);
+   List<DevResult> queryResult(DevResult devResult);
 
     /**
      * 查询发展结果详情

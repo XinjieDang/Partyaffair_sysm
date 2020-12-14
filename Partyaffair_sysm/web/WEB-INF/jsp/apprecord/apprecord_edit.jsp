@@ -21,7 +21,7 @@
         <div class="list-left" style="width: 835px;">
             <div class="data-form">
                 <form id="form1" class="form-horizontal" method="post">
-                    <input type="hidden" id="ask_id" name="stu_id" value="${apprecord.ask_id}">
+                    <input type="hidden" id="ask_id" name="ask_id" value="${apprecord.ask_id}">
                     <div class="form-group">
                         <label for="inputEmail3" class="col-sm-2 control-label">申请编号：</label>
                         <div class="col-sm-10">
@@ -81,9 +81,9 @@
                         <div class="col-sm-10">
                             <select name="reviewer" id="reviewer" class="form-control">
                                 <option value="">--选择审核人--</option>
-                                <option value="王老师" ${apprecord.askdev eq "王老师"?"selected":"" }>王老师</option>
-                                <option value="李老师" ${apprecord.askdev eq "李老师"?"selected":"" }>李老师</option>
-                                <option value="梁老师" ${apprecord.askdev eq "梁老师"?"selected":"" }>梁老师</option>
+                                <option value="王老师" ${apprecord.reviewer eq "王老师"?"selected":"" }>王老师</option>
+                                <option value="李老师" ${apprecord.reviewer eq "李老师"?"selected":"" }>李老师</option>
+                                <option value="梁老师" ${apprecord.reviewer eq "梁老师"?"selected":"" }>梁老师</option>
                             </select>
                         </div>
 

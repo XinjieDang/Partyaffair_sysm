@@ -63,7 +63,7 @@
                     <th>${list.cre_time}</th>
                     <th>${list.reviewer}</th>
                     <th>${list.askstatus}</th>
-                    <th><a href="${pageContext.request.contextPath}/apprecord/edit?or_id=${list.ask_id}" class="btn btn-info btn-sm">编辑</a></th>
+                    <th><a href="${pageContext.request.contextPath}/apprecord/edit?ask_id=${list.ask_id}" class="btn btn-info btn-sm">编辑</a></th>
                     <th><button onclick="del(${list.ask_id})" class="btn btn-danger btn-danger  btn-sm">申请驳回</button></th>
                 </tr>
             </c:forEach>
