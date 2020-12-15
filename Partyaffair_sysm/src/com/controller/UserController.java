@@ -1,7 +1,9 @@
 package com.controller;
 
 import com.base.ResultInfo;
+import com.pojo.News;
 import com.pojo.User;
+import com.service.NewsService;
 import com.service.UserService;
 import com.util.MD5;
 import org.apache.ibatis.annotations.Param;
@@ -22,6 +24,8 @@ import java.util.List;
 public class UserController {
     @Autowired
     private UserService userService;
+    @Autowired
+    private NewsService newsService;
     @RequestMapping("login")
     public String login(User user, HttpSession session, Model model) {
         User loginUser = null;
@@ -41,8 +45,9 @@ public class UserController {
 
     }
     @RequestMapping("main")
-    public String main(){
-        return "index";
+    public String main(News news,Model model){
+        newsService.querys(news,model);
+        return "main";
     }
     @RequestMapping("userList")
     public String userlist(User user, Model model){

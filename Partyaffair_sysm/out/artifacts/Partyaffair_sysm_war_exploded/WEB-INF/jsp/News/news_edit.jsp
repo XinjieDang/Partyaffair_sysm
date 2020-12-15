@@ -38,20 +38,19 @@
                         </div>
                     </div>
 
-
                     <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-2 control-label"><font color="red">*</font>编辑时间：</label>
+                        <%--@declare id="inputpassword3"--%>
+                        <label for="inputPassword3" class="col-sm-2 control-label"><font color="red">*</font>编辑时间：</label>
                         <div class="col-sm-10">
                             <input type="date" value="${news.cre_time}" id="cre_time" class="form-control"
-                                   id="cre_time" placeholder="编辑时间" name="cre_time">
+                                   placeholder="编辑时间" name="cre_time">
                         </div>
                     </div>
-
 
                     <div class="form-group">
                         <label for="inputEmail3" class="col-sm-2 control-label"><font color="red">*</font>编辑内容：</label>
                         <div class="col-sm-10">
-                            <textarea class="form-control" value="${news.content}" id="content" name="content" rows="3"></textarea>
+                            <textarea class="form-control"id="content" name="content" rows="3">${news.content}</textarea>
                         </div>
                     </div>
 
@@ -60,7 +59,7 @@
                         <div class="col-md-9">
                             <div class="fileinput fileinput-new" data-provides="fileinput">
                                 <div class="fileinput-preview thumbnail" data-trigger="fileinput"
-                                     style="width:600px; height:300px;"><img id="pictureShow" src="upImages/001.jpg"></div>
+                                     style="width:600px; height:300px;"><img id="pictureShow" src="${pageContext.request.contextPath}/upImages/${news.images}"></div>
                                 <div>
                                     <span class="btn red btn-outline btn-file">
                                        <span class="fileinput-new"> 选择图片 </span>
@@ -95,7 +94,6 @@
         var fileName="";
         console.log(picture[0])
         console.log(pictureForm)
-
         $.ajax({
             //请求方式
             type : "POST",
@@ -130,41 +128,42 @@
         console.log(picture);
         alert(picture);
         // 表单数据
-        var json = {"news_id":news_id,"title":title,"author":author,"cre_time":cre_time,"content":content,"picture":picture};
+        var json = {"news_id":news_id,"title":title,"author":author,"cre_time":cre_time,"content":content,"images":picture};
         // 提交
         // ajax 示例
-        <%--$.ajax({--%>
-        <%--    //请求方式--%>
-        <%--    type : "POST",--%>
-        <%--    //请求的媒体类型--%>
-        <%--    contentType: "application/json;charset=UTF-8",--%>
-        <%--    //请求地址--%>
-        <%--    url : "${pageContext.request.contextPath}/user/save",--%>
-        <%--    //数据，json字符串--%>
-        <%--    data : JSON.stringify(json),--%>
-        <%--    //请求成功--%>
-        <%--    success : function(data) {--%>
-        <%--        console.log(data);--%>
-        <%--        // 获取集合属性--%>
-        <%--        var code = data.code;--%>
-        <%--        if (code == 200) {--%>
-        <%--            alert("操作成功！1秒后跳转列表页...")--%>
-        <%--            // 跳转至列表--%>
-        <%--            setTimeout(function(){window.location.href="${pageContext.request.contextPath}/user/userList";},1500)--%>
+        $.ajax({
+            //请求方式
+            type : "POST",
+            async:false,
+            //请求的媒体类型
+            contentType: "application/json;charset=UTF-8",
+            //请求地址
+            url : "${pageContext.request.contextPath}/news/save",
+            //数据，json字符串
+            data : JSON.stringify(json),
+            //请求成功
+            success : function(data) {
+                console.log(data);
+                // 获取集合属性
+                var code = data.code;
+                if (code == 200) {
+                    alert("操作成功")
+                    // 跳转至列表
+                   window.location.href="${pageContext.request.contextPath}/news/newslist";
 
-        <%--        }--%>
-        <%--        else {--%>
-        <%--            var msg=data.msg;--%>
-        <%--            alert(msg);--%>
-        <%--        }--%>
+                }
+                else {
+                    var msg=data.msg;
+                    alert(msg);
+                }
 
-        <%--    },--%>
-        <%--    //请求失败，包含具体的错误信息--%>
-        <%--    error : function(e){--%>
-        <%--        console.log(e.status);--%>
-        <%--        console.log(e.responseText);--%>
-        <%--    }--%>
-        <%--});--%>
+            },
+            //请求失败，包含具体的错误信息
+            error : function(e){
+                console.log(e.status);
+                console.log(e.responseText);
+            }
+        });
 
     });
 </script>

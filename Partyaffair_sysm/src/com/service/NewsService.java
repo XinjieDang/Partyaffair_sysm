@@ -7,5 +7,5 @@ public interface NewsService {
     ResultInfo add(News news);
     ResultInfo delete(Integer news_id);
     boolean findNewsByid(Integer news_id,Model model);
-    boolean querys(News news, Model model);
+    void querys(News news, Model model);
 }

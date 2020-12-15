@@ -1,10 +1,12 @@
 package com.controller;
 
+import com.base.ResultInfo;
 import com.pojo.News;
 import com.service.NewsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -20,7 +22,7 @@ public class NewsController {
     private NewsService newsService;
     @RequestMapping("edit")
     public String edit(Integer news_id, Model model){
-
+        System.out.println("cesssss");
         if(news_id!=null){
             newsService.findNewsByid(news_id,model);
         }
@@ -44,5 +46,25 @@ public class NewsController {
         }
         System.out.println(fileName);
         return fileName;
+    }
+    @ResponseBody
+    @RequestMapping(value = "save")
+    public ResultInfo save(@RequestBody News news){
+        System.out.println(news.toString());
+        ResultInfo resultInfo=newsService.add(news);
+        return resultInfo;
+    }
+
+    @RequestMapping("newslist")
+    public String newlist(News news,Model model){
+        newsService.querys(news,model);
+        return "News/news_list";
+
+    }
+    @RequestMapping(value = "delete")
+    @ResponseBody
+    public ResultInfo delete(Integer news_id){
+        ResultInfo resultInfo=newsService.delete(news_id);
+        return resultInfo;
     }
 }

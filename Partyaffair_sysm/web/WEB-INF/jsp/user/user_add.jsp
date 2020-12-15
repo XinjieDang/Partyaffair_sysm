@@ -114,7 +114,7 @@
                     if (code == 200) {
                        alert("操作成功！1秒后跳转列表页...")
                         // 跳转至列表
-                        setTimeout(function(){window.location.href="${pageContext.request.contextPath}/user/userList";},1500)
+                       window.location.href="${pageContext.request.contextPath}/user/userList";
 
                     }
                     else {

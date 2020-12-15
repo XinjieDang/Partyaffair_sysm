@@ -11,7 +11,7 @@
     <delete id="delete" parameterType="Integer">
         delete from t_news where news_id=#{news_id}
     </delete>
-    <select id="findNewByid" parameterType="Integer" resultType="com.pojo.News">
+    <select id="findNewsByid" parameterType="Integer" resultType="com.pojo.News">
         select * from t_news where news_id=#{news_id}
     </select>
     <update id="update" parameterType="com.pojo.News">
@@ -21,8 +21,8 @@
     <select id="querys" resultType="com.pojo.News">
         select * from t_news
         <where>
-            <if test="news_id!=null and news_id!=''">
-                and news_id=#{news_id}
+            <if test="title!=null and title!=''">
+                and title=#{title}
             </if>
             <if test="author!=null and author!=''">
                 and author LIKE concat ('%','${author}','%')

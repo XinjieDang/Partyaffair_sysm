@@ -156,7 +156,6 @@
             data: form_data,
             //请求成功
             success: function (data) {
-                alert("发送数据成功qq")
                 console.log(data);
                 // 获取集合属性
                 var code = data.code;

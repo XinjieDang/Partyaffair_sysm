@@ -7,6 +7,9 @@ import com.service.NewsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
+
+import java.util.List;
+
 @Service
 public class NewsServiceImpl implements NewsService {
     @Autowired
@@ -33,7 +36,14 @@ public class NewsServiceImpl implements NewsService {
 
     @Override
     public ResultInfo delete(Integer news_id) {
-        return null;
+        ResultInfo resultInfo=new ResultInfo();
+        int result=0;
+        result=newsDao.delete(news_id);
+        if(result<0){
+            resultInfo.setCode(500);
+            resultInfo.setMsg("操作失败！");
+        }
+        return resultInfo;
     }
 
     @Override
@@ -47,7 +57,9 @@ public class NewsServiceImpl implements NewsService {
     }
 
     @Override
-    public boolean querys(News news, Model model) {
-        return false;
+    public void querys(News news, Model model) {
+        List<News> list=newsDao.querys(news);
+        model.addAttribute("list",list);
+
     }
 }

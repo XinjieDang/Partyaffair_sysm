@@ -12,11 +12,11 @@ public class RouteController {
     private UserService userService;
     @RequestMapping("login")
     public String welcome(){
-        return "index";
+        return "login";
     }
     @RequestMapping("index")
     public String index(){
-        return "index";
+        return "main";
     }
     @RequestMapping("edit")
     public String adduser(Integer id, Model model){

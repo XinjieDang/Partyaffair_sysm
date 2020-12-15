@@ -83,7 +83,7 @@
             data : form_data,
             //请求成功
             success : function(data) {
-                alert("测试数据提交！")
+                // alert("测试数据提交！")
                 console.log(data);
                 // 获取集合属性
                 var code = data.code;

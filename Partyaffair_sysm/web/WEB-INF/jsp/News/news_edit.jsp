@@ -38,20 +38,19 @@
                         </div>
                     </div>
 
-
                     <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-2 control-label"><font color="red">*</font>编辑时间：</label>
+                        <%--@declare id="inputpassword3"--%>
+                        <label for="inputPassword3" class="col-sm-2 control-label"><font color="red">*</font>编辑时间：</label>
                         <div class="col-sm-10">
                             <input type="date" value="${news.cre_time}" id="cre_time" class="form-control"
-                                   id="cre_time" placeholder="编辑时间" name="cre_time">
+                                   placeholder="编辑时间" name="cre_time">
                         </div>
                     </div>
-
 
                     <div class="form-group">
                         <label for="inputEmail3" class="col-sm-2 control-label"><font color="red">*</font>编辑内容：</label>
                         <div class="col-sm-10">
-                            <textarea class="form-control" value="${news.content}" id="content" name="content" rows="3"></textarea>
+                            <textarea class="form-control"id="content" name="content" rows="3">${news.content}</textarea>
                         </div>
                     </div>
 
@@ -60,7 +59,7 @@
                         <div class="col-md-9">
                             <div class="fileinput fileinput-new" data-provides="fileinput">
                                 <div class="fileinput-preview thumbnail" data-trigger="fileinput"
-                                     style="width:600px; height:300px;"><img id="pictureShow"></div>
+                                     style="width:600px; height:300px;"><img id="pictureShow" src="${pageContext.request.contextPath}/upImages/${news.images}"></div>
                                 <div>
                                     <span class="btn red btn-outline btn-file">
                                        <span class="fileinput-new"> 选择图片 </span>
@@ -109,7 +108,6 @@
             //请求成功
             success : function(data) {
                 console.log(data)
-                alert("测试23424！")
                 fileName=data;
 
             },
@@ -129,7 +127,7 @@
         console.log(picture);
         alert(picture);
         // 表单数据
-        var json = {"news_id":news_id,"title":title,"author":author,"cre_time":cre_time,"content":content,"picture":picture};
+        var json = {"news_id":news_id,"title":title,"author":author,"cre_time":cre_time,"content":content,"images":picture};
         // 提交
         // ajax 示例
         $.ajax({
