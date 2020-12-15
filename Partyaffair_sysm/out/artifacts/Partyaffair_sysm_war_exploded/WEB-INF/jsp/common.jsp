@@ -16,3 +16,7 @@
 <%--默认自定义样式--%>
 <link rel="stylesheet" href="${prc}/public/css/style.css">
 <script src="${prc}/public/js/jquery.cookie.js"></script>
+
+
+<link rel="stylesheet" href="${prc}/public/css/bootstrap-fileinput.css">
+<script src="${prc}/public/js/bootstrap-fileinput.js"></script>

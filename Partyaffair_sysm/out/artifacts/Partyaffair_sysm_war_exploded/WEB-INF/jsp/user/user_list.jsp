@@ -38,6 +38,7 @@
                 <th>登录名</th>
                 <th>真实姓名</th>
                 <th>邮箱</th>
+                <th>角色</th>
                 <th colspan="2" style="text-align: center;">操作</th>
             </tr>
             </thead>
@@ -50,6 +51,7 @@
                     <th>${list.u_name}</th>
                     <th>${list.t_name}</th>
                     <th>${list.u_email}</th>
+                    <th>超级管理员</th>
                     <th style="text-align: center;"><a href="${pageContext.request.contextPath}/route/edit?id=${list.id}" class="btn btn-info btn-sm">编辑</a></th>
                     <th style="text-align: center;"><button onclick="del(${list.id})" class="btn btn-danger btn-danger  btn-sm">删除</button></th>
                 </tr>

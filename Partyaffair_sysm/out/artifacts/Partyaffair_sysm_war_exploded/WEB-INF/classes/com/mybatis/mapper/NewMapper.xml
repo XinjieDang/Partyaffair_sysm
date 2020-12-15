@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.NewsDao">
+
+    <insert id="add" parameterType="com.pojo.News">
+        insert into t_news(title,author,cre_time,content,images)
+        values (#{title},#{author},#{cre_time},#{content},#{images})
+    </insert>
+    <delete id="delete" parameterType="Integer">
+        delete from t_news where news_id=#{news_id}
+    </delete>
+    <select id="findNewByid" parameterType="Integer" resultType="com.pojo.News">
+        select * from t_news where news_id=#{news_id}
+    </select>
+    <update id="update" parameterType="com.pojo.News">
+        update t_news set title=#{title},author=#{author},cre_time=#{cre_time},
+        content=#{content} ,images=#{images} where news_id=#{news_id}
+    </update>
+    <select id="querys" resultType="com.pojo.News">
+        select * from t_news
+        <where>
+            <if test="news_id!=null and news_id!=''">
+                and news_id=#{news_id}
+            </if>
+            <if test="author!=null and author!=''">
+                and author LIKE concat ('%','${author}','%')
+            </if>
+        </where>
+    </select>
+</mapper>

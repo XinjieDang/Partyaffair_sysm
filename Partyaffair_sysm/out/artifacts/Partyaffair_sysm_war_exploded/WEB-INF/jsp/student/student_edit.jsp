@@ -23,14 +23,14 @@
                 <form id="form1" class="form-horizontal" method="post">
                     <input type="hidden" id="stu_id" name="stu_id" value="${students.stu_id}">
                     <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-2 control-label">学生学号：</label>
+                        <label for="inputEmail3" class="col-sm-2 control-label"><font color="red">*</font>学生学号：</label>
                         <div class="col-sm-10">
                             <input type="text" value="${students.stu_number}" id="stu_number" class="form-control"
                                    id="stu_number" placeholder="学生学号" name="stu_number">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-2 control-label">学生姓名：</label>
+                        <label for="inputEmail3" class="col-sm-2 control-label"><font color="red">*</font>学生姓名：</label>
                         <div class="col-sm-10">
                             <input type="text" value="${students.sname}" id="sname" class="form-control"
                                    id="inputEmail3" placeholder="学生姓名" name="sname">
@@ -38,7 +38,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-2 control-label">性别：</label>
+                        <label for="inputEmail3" class="col-sm-2 control-label"><font color="red">*</font>性别：</label>
                         <div class="col-sm-10">
                             <input type="radio" name="gender" id="gender" value="男" ${students.gender eq"男"? select:""}
                                    checked="checked">男
@@ -49,14 +49,14 @@
 
                     <div class="form-group">
                         <%--@declare id="inputpassword3"--%>
-                        <label for="inputPassword3" class="col-sm-2 control-label">民族：</label>
+                        <label for="inputPassword3" class="col-sm-2 control-label"><font color="red">*</font>民族：</label>
                         <div class="col-sm-10">
                             <input type="text" value="${students.nation}" class="form-control" id="nation"
                                    placeholder="民族" name="nation">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputPassword3" class="col-sm-2 control-label">生日：</label>
+                        <label for="inputPassword3" class="col-sm-2 control-label"><font color="red">*</font>生日：</label>
                         <div class="col-sm-10">
                             <input type="date" value="${students.birthday}" id="birthday" class="form-control"
                                    placeholder="生日" name="birthday">
@@ -65,7 +65,7 @@
 
 
                     <div class="form-group">
-                        <label for="inputPassword3" class="col-sm-2 control-label">身份证号：</label>
+                        <label for="inputPassword3" class="col-sm-2 control-label"><font color="red">*</font>身份证号：</label>
                         <div class="col-sm-10">
                             <input type="text" value="${students.idcard}" id="idcard" class="form-control"
                                    placeholder="身份证号" name="idcard">
@@ -74,28 +74,28 @@
 
 
                     <div class="form-group">
-                        <label for="inputPassword3" class="col-sm-2 control-label">现居地：</label>
+                        <label for="inputPassword3" class="col-sm-2 control-label"><font color="red">*</font>现居地：</label>
                         <div class="col-sm-10">
                             <input type="text" value="${students.natives}" id="natives" class="form-control"
                                    placeholder="现居地" name="natives">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputPassword3" class="col-sm-2 control-label">籍贯：</label>
+                        <label for="inputPassword3" class="col-sm-2 control-label"><font color="red">*</font>籍贯：</label>
                         <div class="col-sm-10">
                             <input type="text" value="${students.address}" id="address" class="form-control"
                                    placeholder="籍贯" name="address">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputPassword3" class="col-sm-2 control-label">联系电话：</label>
+                        <label for="inputPassword3" class="col-sm-2 control-label"><font color="red">*</font>联系电话：</label>
                         <div class="col-sm-10">
                             <input type="text" value="${students.phone}" id="phone" class="form-control"
                                    placeholder="联系电话" name="phone">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputPassword3" class="col-sm-2 control-label">学历：</label>
+                        <label for="inputPassword3" class="col-sm-2 control-label"><font color="red">*</font>学历：</label>
 
                         <div class="col-sm-10">
                             <select name="education" id="education" class="form-control">
@@ -109,7 +109,7 @@
 
                     </div>
                     <div class="form-group">
-                        <label for="inputPassword3" class="col-sm-2 control-label">家庭出身：</label>
+                        <label for="inputPassword3" class="col-sm-2 control-label"><font color="red">*</font>家庭出身：</label>
 
                         <div class="col-sm-10">
                             <select name="familyorign" id="familyorign" class="form-control">
@@ -123,7 +123,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="inputPassword3" class="col-sm-2 control-label">所属组织：</label>
+                        <label for="inputPassword3" class="col-sm-2 control-label"><font color="red">*</font>所属组织：</label>
                         <div class="col-sm-10">
                             <select id="select-organize" name="or_id" id="or_id" class="form-control">
                                 <option value="1">--选择所属组织--</option>

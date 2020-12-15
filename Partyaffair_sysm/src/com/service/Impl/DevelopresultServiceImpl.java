@@ -41,7 +41,14 @@ public class DevelopresultServiceImpl implements DevelopresultService {
 
     @Override
     public ResultInfo delete(Integer res_id) {
-        return null;
+        ResultInfo resultInfo=new ResultInfo();
+        int result=0;
+        result=developresultDao.delete(res_id);
+        if(result<0){
+            resultInfo.setCode(500);
+            resultInfo.setMsg("操作失败！");
+        }
+        return resultInfo;
     }
 
     /**

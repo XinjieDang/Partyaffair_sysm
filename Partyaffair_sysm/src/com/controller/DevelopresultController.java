@@ -57,4 +57,11 @@ public class DevelopresultController {
         ResultInfo resultInfo=developresultService.add(developresult);
         return  resultInfo;
     }
+
+    @ResponseBody
+    @RequestMapping(value = "del")
+    public ResultInfo del(Integer res_id){
+        ResultInfo resultInfo=developresultService.delete(res_id);
+        return  resultInfo;
+    }
 }

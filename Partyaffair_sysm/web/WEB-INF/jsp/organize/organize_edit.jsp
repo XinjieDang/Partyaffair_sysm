@@ -24,32 +24,32 @@
                 <form id="form1" class="form-horizontal" method="post">
                     <input type="hidden" id="or_id" name="or_id" value="${organizers.or_id}">
                     <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-2 control-label">组织编号：</label>
+                        <label for="inputEmail3" class="col-sm-2 control-label"><font color="red">*</font>组织编号：</label>
                         <div class="col-sm-10">
                             <input type="text" value="${organizers.number}" id="number" class="form-control" id="number" placeholder="组织编号" name="number">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-2 control-label">支部名称：</label>
+                        <label for="inputEmail3" class="col-sm-2 control-label"><font color="red">*</font>支部名称：</label>
                         <div class="col-sm-10">
                             <input type="text" value="${organizers.branchame}" id="branchame" class="form-control" id="inputEmail3" placeholder="支部名称" name="branchame">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputPassword3" class="col-sm-2 control-label">联系地址</label>
+                        <label for="inputPassword3" class="col-sm-2 control-label"><font color="red">*</font>联系地址</label>
                         <div class="col-sm-10">
                             <input type="text" value="${organizers.address}" id="address" class="form-control" id="address" placeholder="联系地址" name="address">
                         </div>
                     </div>
                     <div class="form-group">
                         <%--@declare id="inputpassword3"--%>
-                        <label for="inputPassword3" class="col-sm-2 control-label">联系电话</label>
+                        <label for="inputPassword3" class="col-sm-2 control-label"><font color="red">*</font>联系电话</label>
                         <div class="col-sm-10">
                             <input type="text" value="${organizers.phone}" class="form-control" id="phone" placeholder="联系电话" name="phone">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputPassword3" class="col-sm-2 control-label">负责人</label>
+                        <label for="inputPassword3" class="col-sm-2 control-label"><font color="red">*</font>负责人</label>
                         <div class="col-sm-10">
                             <input type="text" value="${organizers.personliable}" id="personliable" class="form-control"placeholder="负责人" name="personliable">
                         </div>

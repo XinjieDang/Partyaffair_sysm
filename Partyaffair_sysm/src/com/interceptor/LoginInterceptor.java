@@ -12,7 +12,7 @@ public class LoginInterceptor implements HandlerInterceptor {
         //获取请求的url
         String url=request.getRequestURI();
         //login.jsp或登录请求放行，不拦截
-        if(url.indexOf("tologin")>=0||url.indexOf("/login")>=0){
+        if(url.indexOf("route/login")>=0||url.indexOf("user/login")>=0){
             return true;
         }
         //获取session

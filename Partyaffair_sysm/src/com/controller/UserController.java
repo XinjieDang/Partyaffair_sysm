@@ -3,6 +3,7 @@ package com.controller;
 import com.base.ResultInfo;
 import com.pojo.User;
 import com.service.UserService;
+import com.util.MD5;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,6 +25,9 @@ public class UserController {
     @RequestMapping("login")
     public String login(User user, HttpSession session, Model model) {
         User loginUser = null;
+        //登录之前密码先加密
+        String pwd=MD5.Encrypt(user.getU_password());
+        user.setU_password(pwd);
         loginUser = userService.login(user);
         if (loginUser != null) {
             session.setAttribute("user", user);
@@ -31,7 +35,7 @@ public class UserController {
             return "redirect:main";
         } else {
             System.out.println("登录失败");
-            model.addAttribute("msg, 用户名或密码错误，请重试！");
+            model.addAttribute("msg","用户名或密码错误！");
             return "login";
         }
 
@@ -54,16 +58,6 @@ public class UserController {
         }
         return "user/user_list";
     }
-//    @RequestMapping("query")
-//    public String query(User user, Model model){
-//        if(user!=null){
-//            List<User> userList=userService.querys(user);
-//            model.addAttribute("userlist",userList);
-//            System.out.println("查询成功！");
-//
-//        }
-//        return "user/user_list";
-//    }
     @RequestMapping(value ="/save",method=RequestMethod.POST)
     @ResponseBody
     public ResultInfo add(@RequestBody User user){
@@ -78,7 +72,10 @@ public class UserController {
                 resultInfo.setMsg("操作成功");
             }
         }
-        else {
+        else {//添加操作
+            //密码加密
+            String pwd= MD5.Encrypt(user.getU_password());
+            user.setU_password(pwd);
             result=userService.add(user);
             if(result>0){
                 System.out.println("添加成功");
@@ -106,6 +103,15 @@ public class UserController {
            }
         }
        return resultInfo;
+    }
+
+
+
+    @RequestMapping("logout")
+    public String logout(HttpServletRequest request){
+        request.getSession().removeAttribute("user");
+        return "login";
+
     }
 }
 

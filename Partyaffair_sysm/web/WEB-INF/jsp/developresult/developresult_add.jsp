@@ -23,7 +23,7 @@
                 <form id="form1" class="form-horizontal" method="post">
                     <input type="hidden" id="res_id" name="res_id" value="${developresult.res_id}">
                     <div class="form-group">
-                        <label for="inputPassword3" class="col-sm-2 control-label">申请编号：</label>
+                        <label for="inputPassword3" class="col-sm-2 control-label"><font color="red">*</font>申请编号：</label>
                         <div class="col-sm-10">
                             <select id="select-student" name="ask_id" id="ask_id" class="form-control">
                                 <option value="1">--选择申请编号--</option>
@@ -33,7 +33,7 @@
 
 
                     <div class="form-group">
-                        <label for="inputPassword3" class="col-sm-2 control-label">审核结果：</label>
+                        <label for="inputPassword3" class="col-sm-2 control-label"><font color="red">*</font>审核结果：</label>
 
                         <div class="col-sm-10">
                             <select name="audit" id="audit" class="form-control">
@@ -47,7 +47,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="inputPassword3" class="col-sm-2 control-label">发展结果：</label>
+                        <label for="inputPassword3" class="col-sm-2 control-label"><font color="red">*</font>发展结果：</label>
 
                         <div class="col-sm-10">
                             <select name="devresult" id="devresult" class="form-control">
@@ -60,7 +60,7 @@
 
                     </div>
                     <div class="form-group">
-                        <label for="inputPassword3" class="col-sm-2 control-label">审批人：</label>
+                        <label for="inputPassword3" class="col-sm-2 control-label"><font color="red">*</font>审批人：</label>
 
                         <div class="col-sm-10">
                             <select name="approved" id="approved" class="form-control">
@@ -73,7 +73,7 @@
                     </div>
                     <div class="form-group">
                         <%--@declare id="inputpassword3"--%>
-                            <label for="inputPassword3" class="col-sm-2 control-label">审核日期：</label>
+                            <label for="inputPassword3" class="col-sm-2 control-label"><font color="red">*</font>审核日期：</label>
                         <div class="col-sm-10">
                             <input type="date" value="${developresult.cre_time}" id="cre_time" class="form-control"
                                    placeholder="审核日期" name="cre_time">

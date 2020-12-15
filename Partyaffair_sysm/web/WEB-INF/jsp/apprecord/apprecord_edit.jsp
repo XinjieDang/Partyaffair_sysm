@@ -23,14 +23,14 @@
                 <form id="form1" class="form-horizontal" method="post">
                     <input type="hidden" id="ask_id" name="ask_id" value="${apprecord.ask_id}">
                     <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-2 control-label">申请编号：</label>
+                        <label for="inputEmail3" class="col-sm-2 control-label"><font color="red">*</font>申请编号：</label>
                         <div class="col-sm-10">
                             <input type="text" value="${apprecord.ask_number}" id="stu_number" class="form-control"
                                    id="ask_number" placeholder="申请编号" name="ask_number">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputPassword3" class="col-sm-2 control-label">学生姓名：</label>
+                        <label for="inputPassword3" class="col-sm-2 control-label"><font color="red">*</font>学生姓名：</label>
                         <div class="col-sm-10">
                             <select id="select-student" name="stu_id" id="stu_id" class="form-control">
                                 <option value="1">--选择学生--</option>
@@ -39,7 +39,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="inputPassword3" class="col-sm-2 control-label">当前发展状态：</label>
+                        <label for="inputPassword3" class="col-sm-2 control-label"><font color="red">*</font>当前发展状态：</label>
 
                         <div class="col-sm-10">
                             <select name="currents" id="currents" class="form-control">
@@ -53,7 +53,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="inputPassword3" class="col-sm-2 control-label">申请发展状态：</label>
+                        <label for="inputPassword3" class="col-sm-2 control-label"><font color="red">*</font>申请发展状态：</label>
 
                         <div class="col-sm-10">
                             <select name="askdev" id="askdev" class="form-control">
@@ -67,7 +67,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="inputPassword3" class="col-sm-2 control-label">申请日期：</label>
+                        <label for="inputPassword3" class="col-sm-2 control-label"><font color="red">*</font>申请日期：</label>
                         <div class="col-sm-10">
                             <input type="date" value="${apprecord.cre_time}" id="cre_time" class="form-control"
                                    placeholder="申请日期" name="cre_time">
@@ -76,7 +76,7 @@
 
 
                     <div class="form-group">
-                        <label for="inputPassword3" class="col-sm-2 control-label">审核人：</label>
+                        <label for="inputPassword3" class="col-sm-2 control-label"><font color="red">*</font>审核人：</label>
 
                         <div class="col-sm-10">
                             <select name="reviewer" id="reviewer" class="form-control">
@@ -90,7 +90,7 @@
                     </div>
                     <div class="form-group">
                         <%--@declare id="inputpassword3"--%>
-                        <label for="inputPassword3" class="col-sm-2 control-label">申请状态：</label>
+                        <label for="inputPassword3" class="col-sm-2 control-label"><font color="red">*</font>申请状态：</label>
                         <div class="col-sm-10">
                             <select name="askstatus" id="askstatus" class="form-control">
                                 <option value="">--选择申请状态--</option>

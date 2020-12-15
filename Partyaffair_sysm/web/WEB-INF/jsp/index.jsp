@@ -19,9 +19,9 @@
     <div class="nav-manu">
         <ul class="javaex-nav fr">
             <li class="nav-righ">
-                <a href="javascript:;">欢迎您,${user.u_name}</a>
+                <a href="javascript:;">欢迎您 &nbsp;${user.u_name}</a>
             </li>
-            <li class="nav-righ"> <a href="javascript:;">退出当前账号</a></li>
+            <li class="nav-righ"><a href="${pageContext.request.contextPath}/user/logout">退出当前账号</a></li>
         </ul>
     </div>
 </div>
@@ -51,10 +51,19 @@
                     </ul>
                 </li>
 
+
+                <li>
+                    <a href="${pageContext.request.contextPath}/news/neslist">新闻管理</a>
+                    <ul  class="side-hide" id="side-bottom5">
+                        <a href="${pageContext.request.contextPath}/news/edit">添加新闻</a>
+
+                    </ul>
+                </li>
+
                 <li>
                     <a href="${pageContext.request.contextPath}/user/userList">用户管理</a>
                     <ul  class="side-hide" id="side-bottom4">
-                        <li><a>个人信息</a></li>
+
                     </ul>
                 </li>
 

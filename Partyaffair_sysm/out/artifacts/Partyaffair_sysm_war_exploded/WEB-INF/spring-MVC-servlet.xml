@@ -23,13 +23,18 @@
         <property name="suffix" value=".jsp"></property>
 
     </bean>
+    <bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" id="multipartResolver">
+        <property name="defaultEncoding" value="UTF-8"/>
+        <property name="maxUploadSize" value="540000"/>
+<!--        <property name="uploadTempDir" value="file:fileUpload/temp"/>-->
+    </bean>
 <!--    配置拦截器-->
-    <mvc:interceptors>
-        <mvc:interceptor>
-            <mvc:mapping path="**/"/>
-            <bean class="com.interceptor.LoginInterceptor"></bean>
-        </mvc:interceptor>
-    </mvc:interceptors>
+<!--    <mvc:interceptors>-->
+<!--        <mvc:interceptor>-->
+<!--            <mvc:mapping path="**/**"/>-->
+<!--            <bean class="com.interceptor.LoginInterceptor"></bean>-->
+<!--        </mvc:interceptor>-->
+<!--    </mvc:interceptors>-->
 <!--    托管全局异常处理-->
 <!--    <bean class="com.exception.GlobalExceptionResolver"></bean>-->
 

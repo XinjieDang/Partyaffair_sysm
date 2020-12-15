@@ -10,6 +10,7 @@
         <mapper resource="com/mybatis/mapper/StudentMapper.xml"></mapper>
         <mapper resource="com/mybatis/mapper/ApprecordMapper.xml"></mapper>
         <mapper resource="com/mybatis/mapper/DevelopresultMapper.xml"></mapper>
+        <mapper resource="com/mybatis/mapper/NewMapper.xml"></mapper>
     </mappers>
 
 </configuration>
