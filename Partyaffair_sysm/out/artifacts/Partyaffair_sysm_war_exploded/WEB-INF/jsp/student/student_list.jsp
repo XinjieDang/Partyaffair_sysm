@@ -108,7 +108,7 @@
                     "stu_id":stu_id
                 },
                 success:function (data){
-                    alert("测试数据发送成功！");
+                    // alert("测试数据发送成功！");
                     console.log(data.result);
                     var code=data.code;
                     var msg=data.msg;

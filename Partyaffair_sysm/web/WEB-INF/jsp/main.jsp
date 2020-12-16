@@ -6,48 +6,6 @@
     <meta charset="utf-8">
     <title>党务管理系统</title>
     <jsp:include page="common.jsp"></jsp:include>
-    <style type="text/css">
-        .center-main{
-            margin: 0 auto;
-            width: 1100px;
-        }
-        .new-title{
-            text-align: center;
-            margin-top: 50px;
-
-        }
-        .new-title h4{
-            font-size: 22px;
-            font-weight: bold;
-        }
-        .author{
-            text-align: right;
-            font-size: 12px;
-            font-weight: bold;
-        }
-        .ul-main{
-            margin-top: 200px;
-            background: #2e6da4;
-        }
-        .main-image{
-            /*margin: 0 auto;*/
-            width: 600px;
-            height: 400px;
-            display: inline-block;
-            vertical-align:middle;
-        }
-        .new-images{
-            margin: 0 auto;
-            width: 1000px;
-        }
-        .ul-content{
-            width: 800px;
-            margin: 0 auto;
-        }
-        .news-p{
-            text-align:justify;
-        }
-    </style>
 </head>
 <body>
 <jsp:include page="index.jsp"></jsp:include>
@@ -56,7 +14,6 @@
         <span>首页</span>
         <span class="divider">/</span>
         <span class="active">新闻中心</span>
-        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
     </div>
     <div class="well well-lg" style="margin-left: 30px;width:1300px;height: 30px;"><h3 style="text-align: center;margin-top: -10px;">新闻中心</h3></div>
     <div class="list">

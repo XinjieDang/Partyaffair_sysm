@@ -68,6 +68,9 @@ public class UserController {
     public ResultInfo add(@RequestBody User user){
         ResultInfo resultInfo=new ResultInfo();
         int result=0;
+        //密码先加密
+        String pwd= MD5.Encrypt(user.getU_password());
+        user.setU_password(pwd);
         //id 不为空作修改
         if(user.getId()!=null){
             result=userService.update(user);
@@ -79,8 +82,6 @@ public class UserController {
         }
         else {//添加操作
             //密码加密
-            String pwd= MD5.Encrypt(user.getU_password());
-            user.setU_password(pwd);
             result=userService.add(user);
             if(result>0){
                 System.out.println("添加成功");

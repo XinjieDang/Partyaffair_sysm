@@ -2,7 +2,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>添加管理员</title>
+    <meta charset="utf-8">
+    <title>党务管理系统</title>
+    <jsp:include page="../common.jsp"></jsp:include>
 </head>
 <body>
 <jsp:include page="../index.jsp"></jsp:include>
@@ -107,5 +109,4 @@
 }
 </script>
 </body>
-
 </html>

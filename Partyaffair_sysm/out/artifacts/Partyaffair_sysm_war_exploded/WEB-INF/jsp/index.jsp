@@ -19,7 +19,7 @@
     <div class="nav-manu">
         <ul class="javaex-nav fr">
             <li class="nav-righ">
-                <a href="javascript:;">欢迎您 &nbsp;${user.u_name}</a>
+                <a href="javascript:;">欢迎您:&nbsp;${user.u_name}</a>
             </li>
             <li class="nav-righ"><a href="${pageContext.request.contextPath}/user/logout">退出</a></li>
         </ul>
