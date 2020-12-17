@@ -39,7 +39,7 @@
                 and ask_number=#{ask_number}
             </if>
             <if test="currents!=null and currents!=''">
-                and currents LIKE concat ('%','${currents}','%')
+                and currents LIKE concat ('%',#{currents},'%')
             </if>
             and askstatus='审核中' or askstatus='已通过'
         </where>

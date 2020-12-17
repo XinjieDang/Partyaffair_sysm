@@ -22,10 +22,10 @@
         select * from t_news
         <where>
             <if test="title!=null and title!=''">
-                and title=#{title}
+                and title LIKE concat ('%',#{title},'%')
             </if>
             <if test="author!=null and author!=''">
-                and author LIKE concat ('%','${author}','%')
+                and author LIKE concat ('%',#{author},'%')
             </if>
         </where>
     </select>

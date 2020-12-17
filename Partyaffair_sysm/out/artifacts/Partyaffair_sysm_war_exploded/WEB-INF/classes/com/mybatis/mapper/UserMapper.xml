@@ -30,7 +30,7 @@
                 and id=#{id}
             </if>
             <if test="t_name!=null and t_name!=''">
-                and t_name LIKE concat ('%','${t_name}','%')
+                and t_name LIKE concat ('%',#{t_name},'%')
             </if>
         </where>
     </select>

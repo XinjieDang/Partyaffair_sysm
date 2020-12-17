@@ -7,18 +7,7 @@
         select* from t_student
     </select>
 
-<!--    stu_number varchar(50) NOT NULL,-->
-<!--    sname varchar(50) ,-->
-<!--    gender varchar(50) ,-->
-<!--    nation  varchar(50) NOT NULL,-->
-<!--    birthday date,-->
-<!--    idcard  varchar(50) NOT NULL,-->
-<!--    natives varchar(50) NOT NULL,-->
-<!--    address  varchar(50),-->
-<!--    phone varchar(50),-->
-<!--    education varchar(50),-->
-<!--    familyorign varchar(50),-->
-<!--    or_id  int (15)-->
+
 
     <insert id="add" parameterType="com.pojo.Student">
         insert into t_student(stu_number,sname,gender,nation,birthday,idcard,natives,address,phone,education,familyorign,or_id)
@@ -44,10 +33,10 @@
             and stu_number=#{stu_number}
             </if>
             <if test="sname!=null and sname!=''">
-                and sname LIKE concat ('%','${sname}','%')
+                and sname LIKE concat ('%',#{sname},'%')
             </if>
             <if test="address!=null and address!=''">
-                and address  LIKE concat ('%','${address}','%')
+                and address  LIKE concat ('%',#{address},'%')
             </if>
         </where>
     </select>

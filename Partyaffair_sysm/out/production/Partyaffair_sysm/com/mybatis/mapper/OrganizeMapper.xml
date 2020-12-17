@@ -36,10 +36,10 @@
             and number=#{number}
             </if>
             <if test="address!=null and address!=''">
-                and address LIKE concat ('%','${address}','%')
+                and address LIKE concat ('%',#{address},'%')
             </if>
             <if test="personliable!=null and personliable!=''">
-                and personliable LIKE concat ('%','${personliable}','%')
+                and personliable LIKE concat ('%',#{personliable},'%')
             </if>
 
         </where>

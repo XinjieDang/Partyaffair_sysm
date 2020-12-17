@@ -156,8 +156,8 @@
             url: "${pageContext.request.contextPath}/student/getOrganize",
             success: function (data) {
                 // alert("测试发送数据成功！")
-                console.log(data.result);
-                var data = data.result;
+                console.log(data.reslt);
+            var data = data.result;
                 $.each(data, function (index, item) {
                     $("#select-organize").append(
                         "<option value=" + item.or_id + ">" + item.branchame + "</option>"
