@@ -2,6 +2,7 @@
 ### 1、数据库设计
 
 ```mysql
+
 -- 创建Partyaffair_sysm数据库
 create database partyaffair_sysm
 DEFAULT CHARSET utf8
@@ -30,43 +31,49 @@ create table t_user
 	 --创建发展结果表
 	 create table t_developresult
 	 (
-	   res_id int (15) PRIMARY KEY NOT NULL auto_increment,
+	     res_id int (15) PRIMARY KEY NOT NULL auto_increment,
 		 ask_id int (15),
 		 audit varchar(50) NOT NULL,
 		 devresult varchar(50) NOT NULL,
-		 Approved varchar(50) NOT NULL,
+		 approved varchar(50) NOT NULL,
 		 cre_time date
 	 );
 	 --创建申请记录表
 	 create table t_Apprecord
 	 (
-	   ask_id int (15) PRIMARY KEY NOT NULL auto_increment,
+	     ask_id int (15) PRIMARY KEY NOT NULL auto_increment,
 		 ask_number varchar(50) NOT NULL,
 		 stu_id int (15) ,
-		 current  varchar(50),
+		 currents  varchar(50),
 		 askdev varchar(50),
 		 cre_time  date,
-		 Reviewer varchar(50) NOT NULL,
+		 reviewer varchar(50) NOT NULL,
 		 askstatus varchar(50) NOT NULL
 		 
 	 );
 	 --创建学生表
 	 create table t_student
 	 (
-	    stu_id  int (15) PRIMARY KEY NOT NULL auto_increment,
+	       stu_id  int (15) PRIMARY KEY NOT NULL auto_increment,
 			stu_number varchar(50) NOT NULL,
 			sname varchar(50) ,
 			gender varchar(50) ,
 			nation  varchar(50) NOT NULL,
 			birthday date,
 			idcard  varchar(50) NOT NULL,
-			native varchar(50) NOT NULL,
+			natives varchar(50) NOT NULL,
 			address  varchar(50),
 			phone varchar(50),
 			education varchar(50),
 			familyorign varchar(50),
 			or_id  int (15)
 	 );
+	 
+ //发展结果记录数据项显示
+ 发展id  申请编号  学号 姓名  审核结果 发展结果 审批人  时间
+ 
+ select dev.res_id,ask.askid,s.stu_number,s.sname,dev.audit,dev.devresult,dev.cre_time
+ from t_developresult as dev,t_Apprecord as ask,t_student as t where dev.ask_id=ask.ask_id and ask.stu_id=s.stu_id
 	 
  
 ```
