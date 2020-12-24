@@ -231,7 +231,7 @@
             // 监听点击保存按钮事件
             $("#save").click(function () {
                 // 获取输入内容
-                var form_data = $('#form1').serialize();
+                var form_data = $('#form1').serialize();//表单字段序列化
                 // ajax 示例
                 $.ajax({
                     //请求方式

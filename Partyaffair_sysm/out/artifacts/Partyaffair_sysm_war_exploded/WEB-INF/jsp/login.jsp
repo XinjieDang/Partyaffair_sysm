@@ -25,7 +25,7 @@
             <div class="block-data">
                 <div class="input-data">
                     <label>密码:</label>
-                    <input class="input-pwd" id="u_password" type="password" name="u_password" placeholder="请输入密码" data-type="必填" error-pos="32" required>
+                    <input class="input-pwd" maxlength="8" id="u_password" type="password" name="u_password" placeholder="请输入密码" data-type="必填" error-pos="32" required>
                 </div>
             </div>
             <div class="block-data">
